@@ -8,6 +8,15 @@ namespace Template_DesignPattern.TemplateDesignPattern
         protected AppUser AppUser { get; set; }
         protected abstract string SetImage();
         protected abstract string SetFooter();
+
+
+
+        public void SetUser(AppUser appUser)
+        {
+            AppUser = appUser;
+        }
+
+
         public string Build()
         {
             var sb = new StringBuilder();

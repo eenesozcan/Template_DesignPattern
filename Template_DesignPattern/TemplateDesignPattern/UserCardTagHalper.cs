@@ -33,7 +33,9 @@ namespace Template_DesignPattern.TemplateDesignPattern
                 userCardTemplate = new GoldUserCardTemplate();
             }
 
+            userCardTemplate.SetUser(AppUser);
 
+            output.Content.SetHtmlContent(userCardTemplate.Build());
 
 
         }

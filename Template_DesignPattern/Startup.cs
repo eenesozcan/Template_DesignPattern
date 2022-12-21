@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Template_DesignPattern.DAL;
+using Template_DesignPattern.DAL.Entities;
 
 namespace Template_DesignPattern
 {
@@ -25,9 +26,9 @@ namespace Template_DesignPattern
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            //services.AddDbContext<Context>();
+            services.AddDbContext<Context>();
 
-            //services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
+            services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
 
 
 
@@ -48,7 +49,7 @@ namespace Template_DesignPattern
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseAuthentication();
             app.UseRouting();
 
             app.UseAuthorization();
